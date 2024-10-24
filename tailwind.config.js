@@ -6,7 +6,9 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: ['Poppins', 'sans-serif']
+      fontFamily: {
+        sans: ['Poppins', 'Arial', 'sans-serif'],
+      },
     },
     gridTemplateColumns: {
       '80/20' : '80% 18%',

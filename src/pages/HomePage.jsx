@@ -1,23 +1,22 @@
 import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
 import Buckets from '../components/Buckets';
+import Modal from '../components/ModalBucket';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { getBuckets } from '../api/smartTodoApi';
 
 const HomePage = () => {
   const [buckets, setBuckets] = useState([])
   const [loading, setLoading] = useState(true)
+  const [isModalOpen, setModalOpen] = useState(false)
 
   // API get call for all data from backend
   useEffect(() => {
     const fetchBuckets = async () => {
       try {
-        const res = await fetch('http://localhost:8000/buckets')
-        const data = await res.json();  
-        
-        // simulate a request delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        console.log(data)
-        setBuckets(data)
+        const result = await getBuckets()
+        setBuckets(result)
+
       } catch (error) {
         console.log('Error fetching data', error);
       } finally {
@@ -29,7 +28,7 @@ const HomePage = () => {
   }, [])
 
   return (
-    <section className='bg-purple-50 px-4 py-10'> 
+    <section className='bg-purple-50 px-4 py-10 relative'> 
       <div className='container-xl lg:container m-auto'>
       {loading ? (
             <Spinner loading={loading} />
@@ -41,6 +40,18 @@ const HomePage = () => {
             </div>
           )}
       </div>
+
+      {/* Plus Button */}
+      <button 
+        className="absolute bottom-1 right-4 bg-purple-600 text-white rounded-full p-2 shadow-md hover:bg-purple-700 transition duration-300 flex items-center justify-center"
+        onClick={() => setModalOpen(true)}
+      >
+        <AiOutlinePlus size={24} />
+      </button>
+
+      {/* Modal to add bucket */}
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} bucketLength={buckets.length}/>
+
     </section>
 
   )

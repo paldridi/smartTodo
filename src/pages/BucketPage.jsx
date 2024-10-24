@@ -1,12 +1,27 @@
-import { useParams, useLoaderData } from "react-router-dom"
+import { useParams, useLoaderData, useNavigate } from "react-router-dom"
 import TodoList from "../components/TodoList";
+import { useState } from "react";
 
 const BucketPage = ( {} ) => {
   
-  const todoList = useLoaderData();
+  const initialTodoList = useLoaderData();
+  const [todoList, setTodoList] = useState(initialTodoList)
   console.log(todoList)
+  const navigate = useNavigate();
   
   const { bucket_name } = useParams()
+
+  const handleDelete = (id) => {
+    setTodoList((prevList) => prevList.filter((todo) => todo.id !== id))
+  }
+
+  const handleEdit = (id) => {
+    navigate('/edit/{id}')   
+  }
+
+  const handleComplete = (id) => {
+    setTodoList((prevList) => (prevList.map((todo) => todo.id === id ? { ...todo, done: true} : todo)))
+  }
   
 
   return (
@@ -17,8 +32,8 @@ const BucketPage = ( {} ) => {
           </h1>  
           <ul className="space-y-6">
             {todoList.map((todo) => (
-              <li className="p-4 bg-white rounded-lg shadow-md flex justify-between items-center hover:shadow-lg transition-shadow duration-300">
-                <TodoList key={todo.id} todo={todo}/>  
+              <li key={todo.id} className="p-4 bg-white rounded-lg shadow-md flex justify-between items-center hover:shadow-lg transition-shadow duration-300">
+                <TodoList  todo={todo} onDelete={handleDelete} onEdit={handleEdit} onComplete={handleComplete}/>  
               </li>
             ))}
           </ul>

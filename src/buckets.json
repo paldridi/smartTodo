@@ -1,71 +1,85 @@
 {
-    "buckets": [
-      {
-        "id": "1",
-        "name": "Work",
-        "todo_lists": [
-          {
-            "id": "1",
-            "title": "Finish Project Proposal",
-            "description": "Complete the initial project proposal for the new AI initiative.",
-            "deadline": "2024-10-20T00:00:00Z",
-            "ai_recommendation": "Focus on outlining the key benefits and risks.",
-            "done": false
-          },
-          {
-            "id": "2",
-            "title": "Client Meeting Preparation",
-            "description": "Prepare slides and agenda for the client meeting.",
-            "deadline": "2024-10-18T00:00:00Z",
-            "ai_recommendation": "Add a case study slide to demonstrate value.",
-            "done": false
-          }
-        ]
-      },
-      {
-        "id": "2",
-        "name": "Personal",
-        "todo_lists": [
-          {
-            "id": "3",
-            "title": "Buy Groceries",
-            "description": "Pick up essentials for the week.",
-            "deadline": "2024-10-17T00:00:00Z",
-            "ai_recommendation": "Opt for healthier snack alternatives.",
-            "done": false
-          },
-          {
-            "id": "4",
-            "title": "Read a Book",
-            "description": "Finish reading the 'Atomic Habits' book.",
-            "deadline": "2024-10-22T00:00:00Z",
-            "ai_recommendation": "Take notes on key actionable habits.",
-            "done": false
-          }
-        ]
-      },
-      {
-        "id": "3",
-        "name": "Learning",
-        "todo_lists": [
-          {
-            "id": "5",
-            "title": "Complete React Course",
-            "description": "Finish module 5 of the React JS course.",
-            "deadline": "2024-10-25T00:00:00Z",
-            "ai_recommendation": "Practice creating reusable components.",
-            "done": false
-          },
-          {
-            "id": "6",
-            "title": "Explore New AI Techniques",
-            "description": "Research the latest developments in AI model optimization.",
-            "deadline": "2024-10-30T00:00:00Z",
-            "ai_recommendation": "Focus on transformer-based models.",
-            "done": false
-          }
-        ]
-      }
-    ]
-  }
-  
+  "buckets": [
+    {
+      "id": "1",
+      "name": "Work",
+      "todo_lists": [
+        {
+          "id": "1",
+          "title": "Finish Project Proposal",
+          "description": "Complete the initial project proposal for the new AI initiative.",
+          "deadline": "2024-10-20T00:00:00Z",
+          "ai_recommendation": "Focus on outlining the key benefits and risks.",
+          "done": false
+        },
+        {
+          "id": "2",
+          "title": "Client Meeting Preparation",
+          "description": "Prepare slides and agenda for the client meeting.",
+          "deadline": "2024-10-18T00:00:00Z",
+          "ai_recommendation": "Add a case study slide to demonstrate value.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Personal",
+      "todo_lists": [
+        {
+          "id": "1",
+          "title": "Buy Groceries",
+          "description": "Pick up essentials for the week.",
+          "deadline": "2024-10-17T00:00:00Z",
+          "ai_recommendation": "Opt for healthier snack alternatives.",
+          "done": false
+        },
+        {
+          "id": "2",
+          "title": "Read a Book",
+          "description": "Finish reading the 'Atomic Habits' book.",
+          "deadline": "2024-10-22T00:00:00Z",
+          "ai_recommendation": "Take notes on key actionable habits.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Learning",
+      "todo_lists": [
+        {
+          "id": "1",
+          "title": "Complete React Course",
+          "description": "Finish module 5 of the React JS course.",
+          "deadline": "2024-10-25T00:00:00Z",
+          "ai_recommendation": "Practice creating reusable components.",
+          "done": false
+        },
+        {
+          "id": "2",
+          "title": "Explore New AI Techniques",
+          "description": "Research the latest developments in AI model optimization.",
+          "deadline": "2024-10-30T00:00:00Z",
+          "ai_recommendation": "Focus on transformer-based models.",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "test bucket",
+      "todo_lists": []
+    },
+    {
+      "id": "5",
+      "name": "Test Bucket 2",
+      "todo_lists": []
+    },
+    {
+      "id": "6",
+      "name": "Video bucket",
+      "todo_lists": []
+    }
+  ]
+}
