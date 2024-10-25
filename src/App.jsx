@@ -42,6 +42,7 @@ import HomePage from './pages/HomePage';
 import BucketPage from './pages/BucketPage';
 import CalendarPage from './pages/CalendarPage';
 import TodoPage from './pages/TodoPage';
+import './index.css';
 
 const App = () => {
 
