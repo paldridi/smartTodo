@@ -1,19 +1,33 @@
 import axios from 'axios';
 
-// OpenAI API key (updated with your new key)
+// OpenAI API key
 const openAIKey = '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';
 
-// Function to generate concise AI suggestions for a given task description
-export const getAISuggestions = async (taskDescription) => {
+// Function to generate AI suggestion with full bucket context
+export const getAISuggestions = async (taskDescription, extend = false, bucketDetails = {}) => {
   try {
+    const { title, deadline, status } = bucketDetails;
+
+    const prompt = `
+    You are an assistant working on a task in a project management system. Here's the relevant information about the current task:
+
+    Project Name: ${title}
+    Deadline: ${new Date(deadline).toLocaleDateString()}
+    Status: ${status ? "Completed" : "Not Completed"}
+    Task Description: ${taskDescription}
+
+    Provide a ${
+      extend ? "detailed" : "short"
+    } recommendation for completing this task in less than ${extend ? 80 : 30} words.`;
+
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: 'gpt-3.5-turbo',
       messages: [
-        { role: 'system', content: 'You are an assistant.' },
-        { role: 'user', content: `Give me a short, concise suggestion for the following task: ${taskDescription}` }
+        { role: 'system', content: 'You are an assistant that helps with task management.' },
+        { role: 'user', content: prompt }
       ],
-      max_tokens: 50, // Reduced max_tokens for shorter responses
-      temperature: 0.7 // Adjusted temperature for creativity
+      max_tokens: extend ? 200 : 100,
+      temperature: 0.7
     }, {
       headers: {
         'Authorization': `Bearer ${openAIKey}`,
