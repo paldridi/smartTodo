@@ -21,7 +21,7 @@ const App = () => {
           element: <HomePage />,
         },
         {
-          path: ':bucket_name',
+          path: ':bucket_name/:bucket_id',
           element: <BucketPage />,
           loader: todoLoader,
           children: [
