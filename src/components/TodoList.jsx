@@ -2,8 +2,10 @@ import { useEffect, useState, useCallback } from 'react';
 import { FaEdit, FaTrashAlt, FaCheckCircle, FaTimesCircle, FaCaretDown, FaCaretUp, FaRedoAlt, FaPlusCircle, FaComments } from 'react-icons/fa';
 import PropTypes from 'prop-types'; 
 import { getAISuggestions } from '../api/openAI';
+import EditTodo from './EditTodo';
 
-const TodoList = ({ todo, onDelete, onComplete, onEdit }) => {
+const TodoList = ({ todo, onDelete, onComplete, onEdit, bucketId }) => {
+  const [isEditing, setisEditing] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [aiSuggestion, setAiSuggestion] = useState('Fetching AI suggestion...');
   const [loading, setLoading] = useState(false);
@@ -52,22 +54,26 @@ const TodoList = ({ todo, onDelete, onComplete, onEdit }) => {
     onComplete(todo.id, !statusCompleted);
   };
 
+
   return (
     <div className="w-full p-4 bg-white rounded-lg shadow-md mb-4">
-      <div className='flex justify-between items-center'>
+      {isEditing ? (
+        <EditTodo  todoData={todo} setIsEditing={setisEditing} bucketId={bucketId}/>        
+      ) : (
+        <div className='flex justify-between items-center'>
         <div>
           <h2 className="text-lg font-semibold text-blue-800">{todo.title}</h2>
           <p className="text-gray-600">Deadline: {new Date(todo.deadline).toLocaleDateString()}</p>
         </div>
 
         <div className='flex items-center space-x-3'>
-          <button className="text-sky-600 hover:text-sky-800" onClick={() => onEdit(todo.id)}>
+          <button className="text-sky-600 hover:text-sky-800" onClick={() => setisEditing(!isEditing)}>
             <FaEdit />
           </button>
           <button className="text-red-600 hover:text-red-800" onClick={() => onDelete(todo.id)}>
             <FaTrashAlt />
           </button>
-          <button className={statusCompleted ? "text-green-600 hover:text-green-800" : "text-gray-600 hover:text-gray-800"} onClick={handleCompleteToggle}>
+          <button className={statusCompleted ? "text-gray-600 hover:text-gray-800" : "text-green-600 hover:text-green-800"} onClick={handleCompleteToggle}>
             {statusCompleted ? <FaTimesCircle /> : <FaCheckCircle />} 
           </button>
 
@@ -77,6 +83,9 @@ const TodoList = ({ todo, onDelete, onComplete, onEdit }) => {
           </button>
         </div>
       </div>
+      )}
+      
+      
 
       {isOpen && (
         <div className="mt-2 text-gray-700">

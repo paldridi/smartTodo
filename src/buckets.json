@@ -2,28 +2,6 @@
   "buckets": [
     {
       "id": "1",
-      "name": "Work",
-      "todo_lists": [
-        {
-          "id": "1",
-          "title": "Finish Project Proposal",
-          "description": "Complete the initial project proposal for the new AI initiative.",
-          "deadline": "2024-10-20T00:00:00Z",
-          "ai_recommendation": "Focus on outlining the key benefits and risks.",
-          "done": false
-        },
-        {
-          "id": "2",
-          "title": "Client Meeting Preparation",
-          "description": "Prepare slides and agenda for the client meeting.",
-          "deadline": "2024-10-18T00:00:00Z",
-          "ai_recommendation": "Add a case study slide to demonstrate value.",
-          "done": false
-        }
-      ]
-    },
-    {
-      "id": "2",
       "name": "Personal",
       "todo_lists": [
         {
@@ -45,7 +23,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": "2",
       "name": "Learning",
       "todo_lists": [
         {
@@ -67,17 +45,7 @@
       ]
     },
     {
-      "id": "4",
-      "name": "test bucket",
-      "todo_lists": []
-    },
-    {
-      "id": "5",
-      "name": "Test Bucket 2",
-      "todo_lists": []
-    },
-    {
-      "id": "6",
+      "id": "3",
       "name": "Video bucket",
       "todo_lists": []
     }
