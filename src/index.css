@@ -2,47 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Add this to src/index.css */
+/* Ensure FullCalendar takes full height */
+.fc-scroller {
+    height: 100%; /* Allow FullCalendar to expand */
+    overflow-y: auto; /* Enable scrolling if needed */
+}
 
-.app-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .login-button, .signout-button, .resync-button {
-    padding: 10px 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4285F4;
+/* Allow day cells to adapt their height based on content */
+.fc-daygrid-day.fc-day {
+    min-height: 80px; /* Optional: ensure minimum height for better visibility */
+    height: auto;
+}
+
+/* Additional styles for task colors */
+.fc-event {
     color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .login-button:hover, .signout-button:hover, .resync-button:hover {
-    background-color: #3367D6;
-  }
-  
-  .task-item {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .task-item input {
-    margin-right: 10px;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
+    padding: 2px 5px;
+    border-radius: 3px;
+}

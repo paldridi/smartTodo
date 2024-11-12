@@ -11,7 +11,7 @@ const Navbar = () => {
                 <FaHome className="text-2xl" />
             </Link>
             </div>
-            <div className="font-poppins space-x-6 text-white text-lg">
+            <div className="space-x-6 text-white text-lg">
             <Link to="/" className="hover:underline">
                 Buckets
             </Link>
