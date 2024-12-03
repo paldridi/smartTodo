@@ -1,5 +1,7 @@
 import { useState } from "react"
+
 import { editTodoInBucket } from "../api/smartTodoApi";
+
 
 const EditTodo = ({ todoData , setIsEditing, bucketId}) => {
     const [formData, setFormData] = useState({
@@ -26,7 +28,9 @@ const EditTodo = ({ todoData , setIsEditing, bucketId}) => {
                 done: formData.done,
             }
 
+
             await editTodoInBucket(bucketId, todoData.id, updatedTodo)
+
             setIsEditing(false);
             // window.location.reload(bucketId, todoData.id)
         } catch (error) {

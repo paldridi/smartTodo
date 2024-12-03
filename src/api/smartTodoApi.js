@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const smartTodoApi = axios.create({
     baseURL: 'http://localhost:8000'
+
 });
 
 // Retrieve all buckets with their todos
@@ -38,6 +39,7 @@ export const addTodoListToBucket = async (bucketId, newTodo) => {
 };
 
 // Delete a bucket
+
 export const deleteBucket = async (bucketId) => {
     try {
         await smartTodoApi.delete(`/buckets/${bucketId}`);
@@ -78,3 +80,4 @@ export const editTodoInBucket = async (bucketId, todoId, updatedTodo) => {
         return { error: error.message };
     }
 };
+

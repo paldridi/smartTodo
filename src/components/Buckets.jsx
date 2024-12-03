@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { deleteBucket, editBucket } from "../api/smartTodoApi";
 import { useState } from "react";
 
+
 const Buckets = ({ bucket }) => {
   const [isEditing, setisEditing] = useState(false);
   const [bucketName, setBucketName] = useState(bucket.name);
@@ -22,6 +23,7 @@ const Buckets = ({ bucket }) => {
       window.location.reload();
     } catch (error) {
       console.error(error);
+
     }
   };
 

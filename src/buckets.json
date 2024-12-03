@@ -2,7 +2,9 @@
   "buckets": [
     {
       "id": "1",
+
       "name": "Personal ",
+
       "todo_lists": [
         {
           "id": "1",
@@ -24,7 +26,9 @@
     },
     {
       "id": "2",
+
       "name": "Learning 2",
+
       "todo_lists": [
         {
           "id": "1",
@@ -47,6 +51,7 @@
     {
       "id": "3",
       "name": "Video bucket",
+
       "todo_lists": [
         {
           "id": "1",

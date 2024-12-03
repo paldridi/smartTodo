@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -201,6 +202,7 @@ const CalendarPage = () => {
       </div>
     </div>
   );
+
 };
 
 export default CalendarPage;

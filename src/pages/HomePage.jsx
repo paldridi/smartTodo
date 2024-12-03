@@ -1,4 +1,4 @@
-// HomePage.jsx
+
 import { useEffect, useState } from 'react';
 import Spinner from '../components/Spinner';
 import Buckets from '../components/Buckets';
@@ -7,6 +7,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { getBuckets } from '../api/smartTodoApi';
 
 const HomePage = () => {
+
   const [buckets, setBuckets] = useState([]); // Initialize as an empty array
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -28,6 +29,7 @@ const HomePage = () => {
     fetchBuckets();
   }, []);
 
+
   return (
     <section className='bg-purple-50 px-4 py-10 relative'> 
       <div className='container-xl lg:container m-auto'>
@@ -35,7 +37,9 @@ const HomePage = () => {
             <Spinner loading={loading} />
           ) : (
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+
               {Array.isArray(buckets) && buckets.map((bucket) => (
+
                 <Buckets key={bucket.id} bucket={bucket} />
               ))}
             </div>
@@ -49,9 +53,11 @@ const HomePage = () => {
         <AiOutlinePlus size={24} />
       </button>
 
+
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} bucketLength={buckets.length}/>
     </section>
   );
 };
+
 
 export default HomePage;

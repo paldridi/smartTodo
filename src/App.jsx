@@ -1,3 +1,4 @@
+
 import React from 'react';
 import MainLayout from './layouts/MainLayout';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -8,6 +9,7 @@ import CalendarPage from './pages/CalendarPage';
 import TodoPage from './pages/TodoPage';
 
 const App = () => {
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -40,4 +42,5 @@ const App = () => {
     return <RouterProvider router={router} />;
 };
 
-export default App;
+
+export default App
