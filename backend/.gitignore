@@ -1,0 +1,4 @@
+/nodu_modules
+/__pycache__
+/test_openai.py
+.env
