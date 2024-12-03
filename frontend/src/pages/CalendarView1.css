@@ -1,0 +1,215 @@
+/* General Layout */
+.calendar-page {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f8fafc; /* Lighter background for the page */
+}
+
+/* Main Layout for Calendar and Sidebar */
+.main-layout {
+  display: flex;
+  width: 100%;
+}
+
+/* Large Calendar Styling */
+.large-calendar-container {
+  flex: 3;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.large-calendar-container:hover {
+  transform: scale(1.02);
+  background-color: #f4f7fc;
+}
+
+/* Sidebar Layout */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Small Calendar Container */
+.small-calendar-container {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-calendar-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons General Styling */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 18px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #4caf50; /* Green for default buttons */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #45a049; /* Darker green */
+  transform: scale(1.05);
+}
+
+/* Sign-Out Button */
+.btn-signout {
+  background-color: #e74c3c; /* Red for sign-out */
+}
+
+.btn-signout:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Task List */
+.task-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  max-height: 800px; /* Adjust for more tasks */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 10px;
+}
+
+/* Task Items */
+.task-item {
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Example task colors */
+.task-item[style*="background-color: #4caf50"] {
+  background-color: #4caf50; /* Green */
+}
+
+.task-item[style*="background-color: #ff6b6b"] {
+  background-color: #ff6b6b; /* Red */
+}
+
+.task-item[style*="background-color: #3788d8"] {
+  background-color: #3788d8; /* Blue */
+}
+
+/* Task Title and Description */
+.task-item strong {
+  font-size: 1.1rem;
+}
+
+.task-item p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Calendar Title Styling */
+.large-calendar .fc-toolbar-title,
+.small-calendar .fc-toolbar-title {
+  font-size: 1.8rem; /* Slightly larger font */
+  color: #2c3e50; /* Neutral dark color */
+  text-align: center;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Weekday Header Styling */
+.fc .fc-col-header-cell-cushion {
+  font-size: 1rem;
+  color: #34495e; /* Darker gray for weekday names */
+  font-weight: 700;
+  background-color: #ecf0f1; /* Subtle gray background */
+  padding: 12px 0;
+  border: 1px solid #dfe6e9;
+}
+
+/* Day Cell Styling */
+.fc-daygrid-day {
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #f5f8fa; /* Light hover effect */
+}
+
+/* Event Styles */
+.fc-event {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Weekend Styling */
+.fc-day-sun, .fc-day-sat {
+  color: #e74c3c; /* Red for weekends */
+}
+
+/* Today Cell Highlight */
+.fc-day-today {
+  background-color: #ffecb3 !important; /* Light yellow highlight */
+  color: #333333;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .calendar-page {
+    flex-direction: column;
+  }
+
+  .large-calendar-container,
+  .small-calendar-container {
+    margin-right: 0;
+  }
+
+  .task-list {
+    max-height: 300px;
+  }
+}
