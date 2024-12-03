@@ -1,5 +1,3 @@
-# backend/models.py
-
 from config import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from pymongo.errors import DuplicateKeyError
