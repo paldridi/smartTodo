@@ -133,5 +133,5 @@ Here are some screenshots of the application:
 
 Below is the UML squence diagram illustrating the application's flow:
 
-![UML Sequence Diagram](images/UML-diagram.png)
+![UML Sequence Diagram](images/UML-Diagram.png)
 
